@@ -18,11 +18,11 @@ import (
 	"fmt"
 	"os"
 
-	ecr "github.com/awslabs/amazon-ecr-credential-helper/ecr-login"
-	"github.com/awslabs/amazon-ecr-credential-helper/ecr-login/api"
-	"github.com/awslabs/amazon-ecr-credential-helper/ecr-login/config"
-	"github.com/awslabs/amazon-ecr-credential-helper/ecr-login/version"
 	"github.com/docker/docker-credential-helpers/credentials"
+	ecr "github.com/egidijus/amazon-ecr-credential-helper/ecr-login"
+	"github.com/egidijus/amazon-ecr-credential-helper/ecr-login/api"
+	"github.com/egidijus/amazon-ecr-credential-helper/ecr-login/config"
+	"github.com/egidijus/amazon-ecr-credential-helper/ecr-login/version"
 )
 
 const banner = `amazon-ecr-credential-helper

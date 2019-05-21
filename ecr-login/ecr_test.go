@@ -18,9 +18,9 @@ import (
 	"fmt"
 	"testing"
 
-	ecr "github.com/awslabs/amazon-ecr-credential-helper/ecr-login/api"
-	"github.com/awslabs/amazon-ecr-credential-helper/ecr-login/mocks"
 	"github.com/docker/docker-credential-helpers/credentials"
+	ecr "github.com/egidijus/amazon-ecr-credential-helper/ecr-login/api"
+	"github.com/egidijus/amazon-ecr-credential-helper/ecr-login/mocks"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 )

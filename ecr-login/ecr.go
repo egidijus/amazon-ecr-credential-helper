@@ -19,8 +19,8 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/awslabs/amazon-ecr-credential-helper/ecr-login/api"
 	"github.com/docker/docker-credential-helpers/credentials"
+	"github.com/egidijus/amazon-ecr-credential-helper/ecr-login/api"
 )
 
 var notImplemented = errors.New("not implemented")

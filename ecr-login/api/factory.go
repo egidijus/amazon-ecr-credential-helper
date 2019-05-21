@@ -19,8 +19,8 @@ import (
 	"github.com/aws/aws-sdk-go/aws/request"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/ecr"
-	"github.com/awslabs/amazon-ecr-credential-helper/ecr-login/cache"
-	"github.com/awslabs/amazon-ecr-credential-helper/ecr-login/version"
+	"github.com/egidijus/amazon-ecr-credential-helper/ecr-login/cache"
+	"github.com/egidijus/amazon-ecr-credential-helper/ecr-login/version"
 )
 
 // Options makes the constructors more configurable
