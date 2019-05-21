@@ -31,7 +31,8 @@ import (
 const proxyEndpointScheme = "https://"
 const programName = "docker-credential-ecr-login"
 
-var ecrPattern = regexp.MustCompile(`(^[a-zA-Z0-9][a-zA-Z0-9-_]*)\.dkr\.ecr(\-fips)?\.([a-zA-Z0-9][a-zA-Z0-9-_]*)\.amazonaws\.com(\.cn)?`)
+// var ecrPattern = regexp.MustCompile(`(^[a-zA-Z0-9][a-zA-Z0-9-_]*)\.dkr\.ecr(\-fips)?\.([a-zA-Z0-9][a-zA-Z0-9-_]*)\.amazonaws\.com(\.cn)?`)
+var ecrPattern = regexp.MustCompile(`[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)`)
 
 // Registry in ECR
 type Registry struct {
@@ -46,10 +47,12 @@ func ExtractRegistry(serverURL string) (*Registry, error) {
 		serverURL = strings.TrimPrefix(serverURL, proxyEndpointScheme)
 	}
 	matches := ecrPattern.FindStringSubmatch(serverURL)
+	fmt.Println("this should be the server URL ", serverURL)
+	fmt.Println("this should be the ECR pattern ", ecrPattern)
 	if len(matches) == 0 {
-		return nil, fmt.Errorf(programName + " can only be used with Amazon Elastic Container Registry.")
+		return nil, fmt.Errorf(programName + " can only be used with Amazon Elastic Container Registry. (DEVOPS)")
 	} else if len(matches) < 3 {
-		return nil, fmt.Errorf(serverURL + "is not a valid repository URI for Amazon Elastic Container Registry.")
+		return nil, fmt.Errorf(serverURL + " is not a valid repository URI for Amazon Elastic Container Registry. (DEVOPS)")
 	}
 	registry := &Registry{
 		ID:     matches[1],
